@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="6dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/tv_Cadastro_de_Animal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cadastro de Animais"
+            android:textAlignment="center" />
+
+
+        <TextView
+            android:id="@+id/tv_Numero_de_brinco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Numero de brinco:" />
+
+
+        <EditText
+            android:id="@+id/et_Numero_de_brinco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="exemplo 001"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/tv_Data_Nascimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data de Nascimento:" />
+
+        <EditText
+            android:id="@+id/et_Data_Nascimento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="exemplo 10/09/2022"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/tv_Peso_Nascimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Peso do animal no nascimento em (KG):" />
+
+        <EditText
+            android:id="@+id/et_Peso_Nascimento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="exemplo 54.5"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/tv_Data_Pesagem_Atual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data da pesagem atual:" />
+
+        <EditText
+            android:id="@+id/et_Data_Pesagem_Atual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="exemplo 25/10/2022"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/tv_Peso_Atual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Peso atual do animal:" />
+
+        <EditText
+            android:id="@+id/et_Peso_Atual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="exemplo 90.8"
+            android:inputType="numberDecimal" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sexo:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/check_Fêmea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="7dp"
+        android:text="Fêmea"
+        app:layout_constraintStart_toEndOf="@+id/check_Macho"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <CheckBox
+        android:id="@+id/check_Macho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Macho"
+        app:layout_constraintBaseline_toBaselineOf="@+id/check_Fêmea"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/calcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="CalcularTempoDePesagem"
+        android:text="Calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_Fêmea" />
+
+
+    <TextView
+        android:id="@+id/et_Resultado_DiferençaEntreDias"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="@+id/et_Resultado_GanhoDiario"
+        app:layout_constraintStart_toStartOf="@+id/et_Resultado_GanhoDiario"
+        app:layout_constraintTop_toBottomOf="@+id/calcular" />
+
+    <TextView
+        android:id="@+id/et_Resultado_GanhoDiario"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="1dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/et_Resultado_Pesototal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/et_Resultado_GanhoDiario"
+        app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/et_erros"
+        android:layout_width="0dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="33dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_Resultado_Pesototal" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="43dp"
+        android:text="Diferença entre os dias: "
+        app:layout_constraintBottom_toBottomOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/calcular" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="141dp"
+        android:text="Ganho de peso total: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginBottom="40dp"
+        android:text="Ganho de peso diario: "
+        app:layout_constraintBottom_toBottomOf="@+id/textView11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calcular" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
